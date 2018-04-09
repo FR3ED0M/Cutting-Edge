@@ -1,0 +1,40 @@
+<div class = "row">
+  <div class="col-md-4" id="contact-header">
+    <h2>
+      {{ contact.firstName }} {{ contact.lastName }}
+    </h2>
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-2">
+    <a href="#/">
+        <button style="margin-top:20px" class="btn btn-default" ng-click="deleteContact(contact._id)">Delete</button>
+    </a>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<div ng-hide="editMode" class="container" id="contact-info">
+  <div >
+    <br>
+    <p ng-if="contact.email"><strong>Email: </strong><a ng-href="mailto:{{ contact.email }}" target="_blank">{{ contact.email }}</a></p>
+    <p ng-if="contact.phone.mobile"><strong>Mobile: </strong>{{ contact.phone.mobile }} </p>
+    <p ng-if="contact.phone.work"><strong>Work: </strong>{{ contact.phone.work }} </p>
+    <p ng-if="contact.company.name"><strong>Company: </strong>{{contact.company.name}} </p>  
+    <p ng-if="contact.address"><strong>Address: </strong>{{ contact.address }} </p>
+    <p ng-if="contact.address"><strong>City &amp; State: </strong>{{ contact.address2 }} </p>  
+    <p ng-if="contact.website"><strong>Website: </strong><a href="https://{{contact.website}}" target="_blank">{{ contact.website }} </a></p>
+    <br>
+    <div id="contact-bttn">
+        <p>
+          <button class="btn btn-default" ng-click="toggleEdit()">Edit</button>
+          <a class="btn btn-default" href="#/">Back</a>
+        </p>
+    </div>      
+  </div>
+</div>
+<!-- Contact form -->
+<div ng-include="contactFormUrl">
+</div>

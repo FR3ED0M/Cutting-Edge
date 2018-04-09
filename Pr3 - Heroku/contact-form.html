@@ -1,0 +1,56 @@
+<div id="edit-header" class="row" ng-hide="contact._id">
+  <div class="col-md-6">
+      <h2>Create new career contact</h2>
+  </div>
+</div>
+<div class="container" id="edit-info">
+  <div>
+    <p>
+      <label>First Name (required)</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.firstName" required> 
+    </p>
+    <p>
+      <label>Last Name (required)</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.lastName" required> 
+    </p>
+    <p>
+      <label>Email (required)</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.email" required> 
+    </p>
+    <p>
+      <label>Mobile Phone</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.phone.mobile"> 
+    </p>
+    <p>
+      <label>Company Phone</label> 
+      <input id="name" class="form-control" type="text" ng-model="contact.phone.work"> 
+    </p>
+    
+    <!--Additional-->
+    <p>
+        <label>Company Name</label>
+        <input id="name" class="form-control" type="text" ng-model="contact.company.name">
+    </p>  
+      
+    <p>
+        <label>Company Address</label> 
+        <input id="name" class="form-control" type="text" ng-model="contact.address"> 
+    </p>
+      
+    <p>
+        <label>Company City &amp; State</label>
+        <input id="name" class="form-control" type="text" ng-model="contact.address2">
+    </p>  
+    
+    <p>
+        <label>Website (https:// not needed)</label>
+        <input id="name" class="form-control" type="text" ng-model="contact.website">
+    </p>
+      
+      
+    <p>
+      <button style="margin-top:20px" class="btn btn-default" ng-click="saveContact(contact)">Save</button>
+      <button style="margin-top:20px" class="btn btn-default" ng-click="back()">Cancel</button>
+    </p>
+  </div>
+</div>
