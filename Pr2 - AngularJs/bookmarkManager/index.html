@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+         <!--Meta-->
+        <meta charset="utf-8">
+        
+        <title>Bookmark Manager</title>
+        
+        <!--Scripts-->
+        <script src="Assets/Scripts/angular.min.js"></script>
+        <script src="Assets/Scripts/angular-local-storage.js"></script>
+        <script src="bookmark.js"></script>
+        <script src="storage.js"></script>
+        <link rel="stylesheet" href="cover.css">
+        <!--Scripts-->
+        
+        <!--Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Signika:600" rel="stylesheet">
+        <!--Fonts--> 
+        
+        <h1>Favorite Bookmarks Manager</h1>
+    </head>
+    
+    <body>
+        <div ng-app="bookmarkApp">
+            <div id="bookmarkapp" ng-controller="bookmarkListController as bookmarkList">
+                <form ng-submit="bookmarkList.addBookmark()"> <!--Input and Button-->
+                    <input id="new-bookmark" type="text" ng-model="bookmarkList.bookmarkText" size="30" placeholder="Enter web address here..." >
+                    <input id="add-bttn" class="btn-primary" type="submit" value="Add to Favorites">
+                </form>
+                
+                <section id="main" style="display: block;">
+                    <ul id="bookmark-list" class="unstyled"> <!--Current text-->
+                        <li ng-repeat="bookmark in bookmarkList.bookmarks" class="view" ng-keyup="bookmarkList.editBookmark()" >
+                            <div >
+                                <input type="checkbox" ng-model="bookmark.done"> <!--Modify the content-->
+                                <span ng-dblclick="bookmarkList.startEditing(bookmark);" class="done-{{bookmark.done}}">{{bookmark.name}}</span>
+                                <form ng-submit="bookmarkList.doneEditing(bookmark)" ng-show="bookmark.editing">
+                                    <input name="edit-box" class="editable" ng-model="bookmark.name">
+                                </form>
+                            </div>
+                        </li>
+                    </ul>                    
+                </section>
+                
+                <footer style="display: block;"> <!--Counters-->
+                    <div class="bookmark-count">{{bookmarkList.remaining()}} of {{bookmarkList.bookmarks.length}} favorites left</div>
+                    <a id="clear-completed" ng-click="bookmarkList.clear()" ng-show="bookmarkList.hasDone()">Delete <span>{{bookmarkList.bookmarks.length - bookmarkList.remaining()}} bookmarks</span>
+                    </a>
+                </footer>
+                
+                <br><br>
+                <h2>How to Use:</h2>
+                
+                <h4>Add URL:</h4>
+                <ol>
+                    <li>Enter a web address into the text field above.</li>
+                    <li>Click the add button. You may also press the Enter key on your keyboard.</li>
+                </ol>
+                
+                <h4>Modify Current URL:</h4>
+                <ol>
+                    <li>Double click a web address.</li>
+                    <li>A new box will appear.</li>
+                    <li>Enter new URL in this box.</li>
+                    <li>Hit Enter to save your web address.</li>
+                </ol>
+                
+                <h4>Delete a URL:</h4>
+                <ol>
+                    <li>Check the box next to an item.</li>
+                    <li>In the lower right corner, a button will appear.</li>
+                    <li>Clicking this button will delete currently selected items.</li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

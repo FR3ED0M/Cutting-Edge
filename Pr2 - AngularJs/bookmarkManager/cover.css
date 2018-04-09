@@ -1,0 +1,185 @@
+body {
+    font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-87647.jpg);
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+	color: #545E6C;
+	width: 520px;
+	margin: 0px auto;
+}
+
+#bookmarkapp {
+	background: #f6f3ea;
+	padding: 20px;
+    border-style:solid;
+    border-color: #d5cfc0;
+    border-radius: 15px;
+}
+
+h1 {
+	font-size: 30px;
+    font-family: 'Droid Serif', serif;
+    color: aliceblue;
+	text-align: center;
+    padding: 15px;
+    background-position: center;
+    background: #4B6A78;
+    background-size: cover;
+    border-radius: 15px;
+    border: 3px solid #2e4049;
+    margin-bottom: 10px;
+}
+
+#bookmarkapp input[type="text"] {
+	width: 450px;
+	font-size: 15px;
+	line-height: 1.4em;
+	padding: 10px;
+    border-color: #d5cfc0;
+    border-radius: 7px;
+}
+
+#bookmarkapp input[name="edit-box"] {
+    background-color: whitesmoke;
+    float:none;
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 16px;
+    width: 410px;
+    border-color: #d5cfc0;
+    border-radius: 12px;
+}
+
+#main {
+	display: none;
+}
+
+#add-bttn.btn-primary {
+    font-size: 18px;
+    font-family: 'Signika', sans-serif;
+    margin-top: 5px;
+    margin-left: 3px;
+    background-color: #9B9A95;
+    color: aliceblue;
+    border: px solid #DEDCD6;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+    width: 465px;
+}
+
+#add-bttn.btn-primary:hover {
+    font-family: 'Signika', sans-serif;
+    background-color: #CDCCCA;
+    color: #484848;
+    border-color: #8c8c8b;
+}
+
+#bookmark-list {
+	margin: 15px 0;
+	padding: 0;
+	list-style: none;
+}
+
+#bookmark-list li {
+	padding: 18px 20px 18px 0;
+	position: relative;
+	font-size: 24px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#bookmark-list li:last-child {
+	border-bottom: none;
+}
+
+#bookmark-list li .edit {
+    display: inline-block;
+}
+#bookmark-list li.editing {
+	border-bottom: 1px solid #778899;
+}
+
+#bookmark-list li.editing .view {
+	display: none;
+}
+#bookmark-list li.editing .edit {
+	display: inline-block;
+	width: 444px;
+	padding: 13px 15px 14px 20px;
+	margin: 0;
+}
+
+#bookmark-list li.done label {
+	color: #777777;
+	text-decoration: line-through;
+}
+
+#bookmark-list li .done-true  {
+    color: #777777;
+    text-decoration: line-through;
+}
+
+#bookmark-list .destroy {
+	position: absolute;
+	right: 5px;
+	top: 20px;
+	display: none;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}
+
+#bookmarkapp footer {
+	display: none;
+	margin: 0 -20px -30px -20px;
+	overflow: hidden;
+	color: #000;
+	background: #DEDCD6;
+	border-top: 2px solid #ededed;
+	padding: 0 20px;
+	line-height: 43px;
+}
+
+.bookmark-count {
+    float:left;    
+}
+
+.bookmark-count .count{
+    font-weight:bold;    
+}
+
+#clear-completed {
+	float: right;
+	line-height: 25px;
+	text-decoration: none;
+	background: #9B9A95;
+	color: white;
+	font-size: 11px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding: 0 10px 1px ;
+	cursor: pointer;
+    border: 1px solid #DEDCD6;
+    border-radius: 8px;
+}
+
+#clear-completed:hover{
+    background-color: #CDCCCA;
+    color: #484848;
+    border-color: #8c8c8b;
+}
+
+.container{
+    margin-top:10px;
+        font-family:arial;
+}
+
+.container header{
+    padding-bottom:20px;
+    border-bottom:1px solid black;
+}
+
+ul,input,.container{
+    padding:10px;
+}
