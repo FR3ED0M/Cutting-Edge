@@ -1,0 +1,33 @@
+This code is code that was never able to make it into the final copy:
+
+"Edit Description"
+
+    <button ion-button (click)="editNote(item)"><ion-icon name="albums"></ion-icon>Fix</button>
+
+    editNote(item){
+    let prompt = this.alertCtrl.create({
+        title: 'Edit Note',
+        inputs: [{ 
+            name: 'description'
+        }],
+
+        buttons: [
+            {
+                text: 'Cancel'
+            },
+            {
+                text: 'Save',
+                handler: data => {
+                let index = this.items.indexOf(item);
+
+                if(index > -1){
+                    this.items[index] = data;
+                }
+                this.dataService.save(this.items);
+              }
+            }
+        ]  
+    });
+    prompt.present();
+    }
+
